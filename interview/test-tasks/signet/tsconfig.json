@@ -2,16 +2,19 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    // Written before TypeScript defaulted strict to true.
+    "strict": false,
+    "ignoreDeprecations": "6.0",
     "baseUrl": "./",
+    "esModuleInterop": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
-    "target": "es2015",
-    "module": "es2020",
+    "target": "ES2022",
+    "module": "es2022",
     "lib": [
       "es2018",
       "dom"

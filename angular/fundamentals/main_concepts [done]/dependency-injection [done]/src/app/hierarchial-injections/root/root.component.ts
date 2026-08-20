@@ -1,13 +1,15 @@
-import { Component, Host, OnInit, Optional, SkipSelf } from '@angular/core';
+import { Component, Host, OnInit, Optional, SkipSelf, ChangeDetectionStrategy } from '@angular/core';
 
 import { FlowerService } from '../services/flower.service';
 import { AnimalService } from '../services/animal.service';
 
 @Component({
-  selector: 'app-root-h',
-  templateUrl: './root.component.html',
-  styleUrls: ['./root.component.scss'],
-  viewProviders: [{ provide: AnimalService, useValue: { emoji: '🦔' } }]
+    selector: 'app-root-h',
+    templateUrl: './root.component.html',
+    styleUrls: ['./root.component.scss'],
+    viewProviders: [{ provide: AnimalService, useValue: { emoji: '🦔' } }],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class RootComponent implements OnInit {
 

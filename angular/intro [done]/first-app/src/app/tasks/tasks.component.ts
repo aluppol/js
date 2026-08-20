@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.scss']
+    selector: 'app-tasks',
+    templateUrl: './tasks.component.html',
+    styleUrls: ['./tasks.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class TasksComponent implements OnInit {
 

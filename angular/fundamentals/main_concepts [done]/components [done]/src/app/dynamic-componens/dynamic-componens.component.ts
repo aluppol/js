@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AdItem } from './ad-item';
 
 import { AdService } from './ad.service';
@@ -7,9 +7,11 @@ import { SwitchComponentItem } from './switch/switch-component-item';
 import { SwitchComponentService } from './switch/switch-component.service'
 
 @Component({
-  selector: 'app-dynamic-componens',
-  templateUrl: './dynamic-componens.component.html',
-  styleUrls: ['./dynamic-componens.component.scss']
+    selector: 'app-dynamic-componens',
+    templateUrl: './dynamic-componens.component.html',
+    styleUrls: ['./dynamic-componens.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class DynamicComponensComponent implements OnInit {
 

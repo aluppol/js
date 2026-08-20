@@ -1,20 +1,20 @@
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
-  selector: 'my-popup',
-  template: `
+    selector: 'my-popup',
+    template: `
   <span>Popup: {{message}}</span>
     <button (click)="closed.next()">&#x2716;</button>
  `,
-  animations: [
-    trigger('state', [
-      state('open', style({ transform: 'translateY(0%)' })),
-      state('void, closed', style({ transform: 'translateY(100%)', opacity: 0 })),
-      transition('* => *', animate('100ms ease-in')),
-    ])
-  ],
-  styles: [`
+    animations: [
+        trigger('state', [
+            state('open', style({ transform: 'translateY(0%)' })),
+            state('void, closed', style({ transform: 'translateY(100%)', opacity: 0 })),
+            transition('* => *', animate('100ms ease-in')),
+        ])
+    ],
+    styles: [`
     :host {
       z-index:10;
       position: absolute;
@@ -34,7 +34,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     button {
       border-radius: 50%;
     }
-  `]
+  `],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class PopupComponent {
 

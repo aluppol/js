@@ -1,33 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {Hero, SendDataService} from "./send-data.service";
-import {AbstractControl, FormControl, FormGroup} from "@angular/forms";
+import {AbstractControl, UntypedFormControl, UntypedFormGroup} from "@angular/forms";
 
 @Component({
-  selector: 'app-sending-data',
-  templateUrl: './sending-data.component.html',
-  styleUrls: ['./sending-data.component.scss']
+    selector: 'app-sending-data',
+    templateUrl: './sending-data.component.html',
+    styleUrls: ['./sending-data.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SendingDataComponent implements OnInit {
 
   heroes: Hero[];
   foundHeroes: Hero[];
 
-  public postForm = new FormGroup({
-    name: new FormControl(),
-    power: new FormControl(),
+  public postForm = new UntypedFormGroup({
+    name: new UntypedFormControl(),
+    power: new UntypedFormControl(),
   });
 
-  public deleteForm = new FormGroup({
-    name: new FormControl(),
+  public deleteForm = new UntypedFormGroup({
+    name: new UntypedFormControl(),
   });
 
-  public putForm = new FormGroup({
-    name: new FormControl(),
-    power: new FormControl(),
+  public putForm = new UntypedFormGroup({
+    name: new UntypedFormControl(),
+    power: new UntypedFormControl(),
   });
 
-  public searchForm = new FormGroup({
-    creds: new FormControl()
+  public searchForm = new UntypedFormGroup({
+    creds: new UntypedFormControl()
   })
 
   constructor(private  sendService: SendDataService) { }

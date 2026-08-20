@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-parent-listen-child-vote-taker',
-  templateUrl: './parent-listen-child-vote-taker.component.html',
-  styleUrls: ['./parent-listen-child-vote-taker.component.scss'],
+    selector: 'app-parent-listen-child-vote-taker',
+    templateUrl: './parent-listen-child-vote-taker.component.html',
+    styleUrls: ['./parent-listen-child-vote-taker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ParentListenChildVoteTakerComponent {
   public agreed = 0;

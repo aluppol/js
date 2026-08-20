@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ClassObj } from '../../interfaces/build-in-directives';
 import { StylesObj } from '../../interfaces/build-in-directives';
 
 @Component({
-  selector: 'app-built-in-directives',
-  templateUrl: './built-in-directives.component.html',
-  styleUrls: ['./built-in-directives.component.scss'],
+    selector: 'app-built-in-directives',
+    templateUrl: './built-in-directives.component.html',
+    styleUrls: ['./built-in-directives.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class BuiltInDirectivesComponent implements OnInit {
   currentClasses: ClassObj;

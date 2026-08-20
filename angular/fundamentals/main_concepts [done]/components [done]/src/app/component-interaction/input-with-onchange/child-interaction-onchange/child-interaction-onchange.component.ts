@@ -1,9 +1,11 @@
-import { Component, OnChanges, Input, SimpleChange } from '@angular/core';
+import { Component, OnChanges, Input, SimpleChange, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-child-interaction-onchange',
-  templateUrl: './child-interaction-onchange.component.html',
-  styleUrls: ['./child-interaction-onchange.component.scss'],
+    selector: 'app-child-interaction-onchange',
+    templateUrl: './child-interaction-onchange.component.html',
+    styleUrls: ['./child-interaction-onchange.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ChildInteractionOnchangeComponent implements OnChanges {
   @Input() major: number;

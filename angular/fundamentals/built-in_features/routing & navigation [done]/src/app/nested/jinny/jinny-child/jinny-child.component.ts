@@ -1,10 +1,12 @@
-import { Component} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-jinny-child',
-  templateUrl: './jinny-child.component.html',
-  styleUrls: ['./jinny-child.component.scss']
+    selector: 'app-jinny-child',
+    templateUrl: './jinny-child.component.html',
+    styleUrls: ['./jinny-child.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class JinnyChildComponent{
 

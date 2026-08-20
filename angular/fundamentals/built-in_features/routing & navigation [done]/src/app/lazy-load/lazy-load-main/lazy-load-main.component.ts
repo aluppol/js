@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-lazy-load-main',
-  templateUrl: './lazy-load-main.component.html',
-  styleUrls: ['./lazy-load-main.component.scss']
+    selector: 'app-lazy-load-main',
+    templateUrl: './lazy-load-main.component.html',
+    styleUrls: ['./lazy-load-main.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class LazyLoadMainComponent implements OnInit {
   title = 'Lazy Load';

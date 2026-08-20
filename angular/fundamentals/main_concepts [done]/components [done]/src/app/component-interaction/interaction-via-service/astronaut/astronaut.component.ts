@@ -1,12 +1,14 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { MissionService } from '../mission.service';
 
 @Component({
-  selector: 'app-astronaut',
-  templateUrl: './astronaut.component.html',
-  styleUrls: ['./astronaut.component.scss'],
+    selector: 'app-astronaut',
+    templateUrl: './astronaut.component.html',
+    styleUrls: ['./astronaut.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AstronautComponent implements OnDestroy {
   @Input() astronaut: string;

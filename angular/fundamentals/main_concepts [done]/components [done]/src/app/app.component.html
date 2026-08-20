@@ -2,9 +2,11 @@
   <mat-drawer #mainMenu class="main-menu__menu" mode="side">
     <h2 class="main-menu__title">Components</h2>
     <ul class="main-menu__list">
-      <li *ngFor="let menuItem of mainMenuItems">
-        <a class="main-menu__item" routerLink="{{ menuItem.routerLink }}">{{ menuItem.text }}</a>
-      </li>
+      @for (menuItem of mainMenuItems; track menuItem) {
+        <li>
+          <a class="main-menu__item" routerLink="{{ menuItem.routerLink }}">{{ menuItem.text }}</a>
+        </li>
+      }
     </ul>
   </mat-drawer>
   <mat-drawer-content>

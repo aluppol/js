@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ReactiveFavoriteColorComponent } from './reactive-favorite-color.component';
 
@@ -6,7 +6,7 @@ describe('ReactiveFavoriteColorComponent', () => {
   let component: ReactiveFavoriteColorComponent;
   let fixture: ComponentFixture<ReactiveFavoriteColorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ReactiveFavoriteColorComponent ]
     })

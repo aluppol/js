@@ -15,10 +15,12 @@
   [ngModel]="currentItem.name"
   (ngModelChange)="currentItem.name = $event"
   id="example-change"
-/>
+  />
 <ul>
-  <li *ngFor="let id of ngForControlBy; trackBy: trackById">
-    {{ id.id }} - {{ id.name }} <input [(ngModel)]="id.name" />
-    <button (click)="changeId(id)">ChangeId</button>
-  </li>
+  @for (id of ngForControlBy; track trackById(id)) {
+    <li>
+      {{ id.id }} - {{ id.name }} <input [(ngModel)]="id.name" />
+      <button (click)="changeId(id)">ChangeId</button>
+    </li>
+  }
 </ul>

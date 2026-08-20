@@ -1,12 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 import { fromEvent } from 'rxjs';
 import { scan, throttleTime, map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-introduction',
-  templateUrl: './introduction.component.html',
-  styleUrls: ['./introduction.component.scss']
+    selector: 'app-introduction',
+    templateUrl: './introduction.component.html',
+    styleUrls: ['./introduction.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class IntroductionComponent implements OnInit, OnDestroy {
 

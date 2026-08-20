@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MultipleEditSessionComponent } from './multiple-edit-session.component';
 
@@ -6,7 +6,7 @@ describe('MultipleEditSessionComponent', () => {
   let component: MultipleEditSessionComponent;
   let fixture: ComponentFixture<MultipleEditSessionComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MultipleEditSessionComponent ]
     })

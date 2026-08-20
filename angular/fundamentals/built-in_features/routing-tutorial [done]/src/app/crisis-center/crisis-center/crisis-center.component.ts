@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-crisis-center',
-  templateUrl: './crisis-center.component.html',
-  styleUrls: ['./crisis-center.component.scss']
+    selector: 'app-crisis-center',
+    templateUrl: './crisis-center.component.html',
+    styleUrls: ['./crisis-center.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class CrisisCenterComponent implements OnInit {
 

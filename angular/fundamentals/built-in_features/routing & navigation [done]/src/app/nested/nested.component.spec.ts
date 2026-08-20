@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NestedComponent } from './nested.component';
 
@@ -6,7 +6,7 @@ describe('NestedComponent', () => {
   let component: NestedComponent;
   let fixture: ComponentFixture<NestedComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ NestedComponent ]
     })

@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-interaction-setter-child',
-  templateUrl: './interaction-setter-child.component.html',
-  styleUrls: ['./interaction-setter-child.component.scss'],
+    selector: 'app-interaction-setter-child',
+    templateUrl: './interaction-setter-child.component.html',
+    styleUrls: ['./interaction-setter-child.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InteractionSetterChildComponent {
   @Input()

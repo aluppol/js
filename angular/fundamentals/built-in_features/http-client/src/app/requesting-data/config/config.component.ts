@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {Config, ConfigService} from "./config.service";
 
 @Component({
-  selector: 'app-config',
-  templateUrl: './config.component.html',
-  styleUrls: ['./config.component.scss']
+    selector: 'app-config',
+    templateUrl: './config.component.html',
+    styleUrls: ['./config.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ConfigComponent implements OnInit {
 

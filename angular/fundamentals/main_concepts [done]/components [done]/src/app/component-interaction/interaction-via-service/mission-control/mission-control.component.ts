@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MissionService } from '../mission.service';
 
 @Component({
-  selector: 'app-mission-control',
-  templateUrl: './mission-control.component.html',
-  styleUrls: ['./mission-control.component.scss'],
-  providers: [MissionService],
+    selector: 'app-mission-control',
+    templateUrl: './mission-control.component.html',
+    styleUrls: ['./mission-control.component.scss'],
+    providers: [MissionService],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class MissionControlComponent {
   astronauts = ['Lovell', 'Swigert', 'Haise'];

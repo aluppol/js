@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { Observable, interval } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-pipes',
-  templateUrl: './pipes.component.html',
-  styleUrls: ['./pipes.component.scss'],
+    selector: 'app-pipes',
+    templateUrl: './pipes.component.html',
+    styleUrls: ['./pipes.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class PipesComponent implements OnInit {
   birthday = new Date(1995, 5, 20);

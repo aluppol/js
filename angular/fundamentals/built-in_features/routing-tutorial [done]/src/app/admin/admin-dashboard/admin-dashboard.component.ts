@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {Observable, pipe} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {map} from "rxjs/operators";
 import {SelectivePreloadStrategyService} from "../../selective-preload-strategy.service";
 
 @Component({
-  selector: 'app-admin-dashboard',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.scss']
+    selector: 'app-admin-dashboard',
+    templateUrl: './admin-dashboard.component.html',
+    styleUrls: ['./admin-dashboard.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AdminDashboardComponent implements OnInit {
   sessionId: Observable<string>;

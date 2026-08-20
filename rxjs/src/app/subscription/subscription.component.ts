@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { interval, observable } from 'rxjs';
 
 @Component({
-  selector: 'app-subscription',
-  templateUrl: './subscription.component.html',
-  styleUrls: ['./subscription.component.scss']
+    selector: 'app-subscription',
+    templateUrl: './subscription.component.html',
+    styleUrls: ['./subscription.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SubscriptionComponent implements OnInit {
 

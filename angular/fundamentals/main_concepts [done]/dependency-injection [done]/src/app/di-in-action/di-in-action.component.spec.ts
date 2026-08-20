@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DiInActionComponent } from './di-in-action.component';
 
@@ -6,7 +6,7 @@ describe('DiInActionComponent', () => {
   let component: DiInActionComponent;
   let fixture: ComponentFixture<DiInActionComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DiInActionComponent ]
     })

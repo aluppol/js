@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { Hero } from '../interfaces/hero';
 import { HeroService } from '../services/hero.service';
 
 @Component({
-  selector: 'app-hero-list',
-  template: `
-    <div *ngFor="let hero of heroes">
-      {{hero.id}} - {{hero.name}}
-    </div>
-  `
+    selector: 'app-hero-list',
+    template: `
+    @for (hero of heroes; track hero) {
+      <div>
+        {{hero.id}} - {{hero.name}}
+      </div>
+    }
+    `,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HeroListComponent {
   heroes: Hero[];

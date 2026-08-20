@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'spy',
-  templateUrl: './spy.component.html',
-  styleUrls: ['./spy.component.scss'],
+    selector: 'spy',
+    templateUrl: './spy.component.html',
+    styleUrls: ['./spy.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SpyComponent {
   heroNum: number = 1;

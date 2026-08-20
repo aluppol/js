@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {ServerClientService} from "./server-client.service";
 
 @Component({
-  selector: 'app-server-communication',
-  templateUrl: './server-communication.component.html',
-  styleUrls: ['./server-communication.component.scss']
+    selector: 'app-server-communication',
+    templateUrl: './server-communication.component.html',
+    styleUrls: ['./server-communication.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ServerCommunicationComponent implements OnInit {
   title: string;

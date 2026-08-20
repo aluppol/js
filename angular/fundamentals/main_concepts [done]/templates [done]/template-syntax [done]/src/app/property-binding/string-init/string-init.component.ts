@@ -1,9 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-string-init',
-  templateUrl: './string-init.component.html',
-  styleUrls: ['./string-init.component.scss'],
+    selector: 'app-string-init',
+    templateUrl: './string-init.component.html',
+    styleUrls: ['./string-init.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class StringInitComponent implements OnInit {
   @Input() prefix: string;

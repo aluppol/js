@@ -1,4 +1,4 @@
-import { Injectable, ApplicationRef, ComponentFactoryResolver, Injector } from '@angular/core';
+import { Injectable, ApplicationRef, EnvironmentInjector, createComponent } from '@angular/core';
 import { NgElement, WithProperties } from '@angular/elements';
 import { PopupComponent } from './popup/popup.component';
 
@@ -8,17 +8,19 @@ import { PopupComponent } from './popup/popup.component';
 export class PopupService {
 
   constructor(
-    private injector: Injector,
-    private applicationRef: ApplicationRef,
-    private componentFactoryResolver: ComponentFactoryResolver
+    private environmentInjector: EnvironmentInjector,
+    private applicationRef: ApplicationRef
   ) { }
 
 
   showAsComponent(message: string) {
     const popup = document.createElement('popup-component');
 
-    const factory = this.componentFactoryResolver.resolveComponentFactory(PopupComponent);
-    const popupComponentRef = factory.create(this.injector, [], popup);
+    // Angular 17 removed ComponentFactoryResolver in favour of createComponent().
+    const popupComponentRef = createComponent(PopupComponent, {
+      environmentInjector: this.environmentInjector,
+      hostElement: popup,
+    });
 
     this.applicationRef.attachView(popupComponentRef.hostView);
 

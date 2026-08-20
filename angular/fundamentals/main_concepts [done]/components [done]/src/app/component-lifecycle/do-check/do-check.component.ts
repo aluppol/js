@@ -1,11 +1,15 @@
-import { Component, DoCheck, Input } from '@angular/core';
+import { Component, DoCheck, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  template: `<button (click)="clearLog()">Clear Log</button>
+    template: `<button (click)="clearLog()">Clear Log</button>
     <ul>
-      <li *ngFor="let logMsg of log">{{ logMsg }}</li>
-    </ul> `,
-  selector: 'do-check',
+      @for (logMsg of log; track logMsg) {
+        <li>{{ logMsg }}</li>
+      }
+    </ul>`,
+    selector: 'do-check',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class DoCheckComp implements DoCheck {
   @Input() heroName: string;

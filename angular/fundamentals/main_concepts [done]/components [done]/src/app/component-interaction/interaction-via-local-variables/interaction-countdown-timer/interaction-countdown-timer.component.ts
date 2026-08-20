@@ -1,9 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-interaction-countdown-timer',
-  templateUrl: './interaction-countdown-timer.component.html',
-  styleUrls: ['./interaction-countdown-timer.component.scss'],
+    selector: 'app-interaction-countdown-timer',
+    templateUrl: './interaction-countdown-timer.component.html',
+    styleUrls: ['./interaction-countdown-timer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InteractionCountdownTimerComponent implements OnInit, OnDestroy {
   public message = '';

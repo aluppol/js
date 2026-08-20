@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { InOutPropsComponent } from './in-out-props.component';
 
@@ -6,7 +6,7 @@ describe('InOutPropsComponent', () => {
   let component: InOutPropsComponent;
   let fixture: ComponentFixture<InOutPropsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ InOutPropsComponent ]
     })

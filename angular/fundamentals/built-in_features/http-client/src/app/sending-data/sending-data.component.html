@@ -1,37 +1,43 @@
 <h1 class="title">Sending Data</h1>
 <h2>Heroes:</h2>
 <ul>
-  <li *ngFor="let hero of heroes">{{hero.name}}: {{hero.power}}</li>
+  @for (hero of heroes; track hero) {
+    <li>{{hero.name}}: {{hero.power}}</li>
+  }
 </ul>
 
 <hr>
 
-<h3>POST</h3>
-<form [formGroup]="postForm">
-  <input type="text" placeholder="Name" formControlName="name">
-  <input type="number" placeholder="Power (num)" formControlName="power">
-  <button (click)="postHeroes()">Save</button>
-</form>
-<hr>
-<h3>DELETE</h3>
-<form [formGroup]="deleteForm">
-  <input type="text" placeholder="Name" formControlName="name">
-  <button (click)="removeHero()">Remove</button>
-</form>
-<h3>PUT</h3>
-<form [formGroup]="putForm">
-  <input type="text" placeholder="Name" formControlName="name">
-  <input type="number" placeholder="Power (num)" formControlName="power">
-  <button (click)="updateHero()">Update</button>
-</form>
-<hr>
-<button (click)="updateToken()">Update token</button>
+  <h3>POST</h3>
+  <form [formGroup]="postForm">
+    <input type="text" placeholder="Name" formControlName="name">
+    <input type="number" placeholder="Power (num)" formControlName="power">
+    <button (click)="postHeroes()">Save</button>
+  </form>
+  <hr>
+    <h3>DELETE</h3>
+    <form [formGroup]="deleteForm">
+      <input type="text" placeholder="Name" formControlName="name">
+      <button (click)="removeHero()">Remove</button>
+    </form>
+    <h3>PUT</h3>
+    <form [formGroup]="putForm">
+      <input type="text" placeholder="Name" formControlName="name">
+      <input type="number" placeholder="Power (num)" formControlName="power">
+      <button (click)="updateHero()">Update</button>
+    </form>
+    <hr>
+      <button (click)="updateToken()">Update token</button>
 
-<hr>
-<form [formGroup] = "searchForm">
-  <input type="text" placeholder="Search" formControlName = "creds">
-  <button (click)="findHeroes()">Find</button>
-</form>
-<ul *ngIf="foundHeroes">
-  <li *ngFor="let hero of foundHeroes">{{hero.name}}: {{hero.power}}</li>
-</ul>
+      <hr>
+        <form [formGroup] = "searchForm">
+          <input type="text" placeholder="Search" formControlName = "creds">
+          <button (click)="findHeroes()">Find</button>
+        </form>
+        @if (foundHeroes) {
+          <ul>
+            @for (hero of foundHeroes; track hero) {
+              <li>{{hero.name}}: {{hero.power}}</li>
+            }
+          </ul>
+        }

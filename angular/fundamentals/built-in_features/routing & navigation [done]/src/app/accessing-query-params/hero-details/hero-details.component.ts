@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Hero} from "../../../interfaces/hero";
 import {Observable} from "rxjs";
 import {HeroService} from "../hero.service";
 
 @Component({
-  selector: 'app-hero-details',
-  templateUrl: './hero-details.component.html',
-  styleUrls: ['./hero-details.component.scss']
+    selector: 'app-hero-details',
+    templateUrl: './hero-details.component.html',
+    styleUrls: ['./hero-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HeroDetailsComponent implements OnInit {
   hero$: Observable<Hero>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
 import {switchMap} from "rxjs/operators";
@@ -7,9 +7,11 @@ import {HeroService} from "./hero.service";
 
 
 @Component({
-  selector: 'app-accessing-query-params',
-  templateUrl: './accessing-query-params.component.html',
-  styleUrls: ['./accessing-query-params.component.scss']
+    selector: 'app-accessing-query-params',
+    templateUrl: './accessing-query-params.component.html',
+    styleUrls: ['./accessing-query-params.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AccessingQueryParamsComponent implements OnInit {
 

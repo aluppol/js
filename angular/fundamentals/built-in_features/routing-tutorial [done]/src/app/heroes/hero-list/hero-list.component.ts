@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {Hero} from "../hero";
 import {MessageService} from "../../message.service";
 import {HeroService} from "../hero.service";
@@ -7,9 +7,11 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {switchMap} from "rxjs/operators";
 
 @Component({
-  selector: 'app-hero-list',
-  templateUrl: './hero-list.component.html',
-  styleUrls: ['./hero-list.component.scss']
+    selector: 'app-hero-list',
+    templateUrl: './hero-list.component.html',
+    styleUrls: ['./hero-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HeroListComponent implements OnInit {
 

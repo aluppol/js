@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { InteractionViaLocalVariablesComponent } from './interaction-via-local-variables.component';
 
@@ -6,7 +6,7 @@ describe('InteractionViaLocalVariablesComponent', () => {
   let component: InteractionViaLocalVariablesComponent;
   let fixture: ComponentFixture<InteractionViaLocalVariablesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ InteractionViaLocalVariablesComponent ]
     })

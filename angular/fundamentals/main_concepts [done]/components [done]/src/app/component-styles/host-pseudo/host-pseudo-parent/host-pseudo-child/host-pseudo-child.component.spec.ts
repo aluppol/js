@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HostPseudoChildComponent } from './host-pseudo-child.component';
 
@@ -6,7 +6,7 @@ describe('HostPseudoChildComponent', () => {
   let component: HostPseudoChildComponent;
   let fixture: ComponentFixture<HostPseudoChildComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HostPseudoChildComponent ]
     })

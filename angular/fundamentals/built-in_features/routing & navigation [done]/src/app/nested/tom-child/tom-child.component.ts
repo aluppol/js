@@ -1,10 +1,12 @@
-import {Component, SkipSelf} from '@angular/core';
+import {Component, SkipSelf, ChangeDetectionStrategy} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-tom-child',
-  templateUrl: './tom-child.component.html',
-  styleUrls: ['./tom-child.component.scss']
+    selector: 'app-tom-child',
+    templateUrl: './tom-child.component.html',
+    styleUrls: ['./tom-child.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class TomChildComponent {
 

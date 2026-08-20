@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { VillainsService } from '../services/villains.service';
 
 @Component({
-  selector: 'app-villans-list',
-  templateUrl: './villans-list.component.html',
-  styleUrls: ['./villans-list.component.scss'],
-  providers: [VillainsService]
+    selector: 'app-villans-list',
+    templateUrl: './villans-list.component.html',
+    styleUrls: ['./villans-list.component.scss'],
+    providers: [VillainsService],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 
 export class VillansListComponent implements OnInit {

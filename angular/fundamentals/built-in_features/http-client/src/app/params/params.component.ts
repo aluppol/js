@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-params',
-  templateUrl: './params.component.html',
-  styleUrls: ['./params.component.scss']
+    selector: 'app-params',
+    templateUrl: './params.component.html',
+    styleUrls: ['./params.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ParamsComponent implements OnInit {
 

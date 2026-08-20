@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AutonomiousScopeCheckerComponent } from './autonomious-scope-checker.component';
 
@@ -6,7 +6,7 @@ describe('AutonomiousScopeCheckerComponent', () => {
   let component: AutonomiousScopeCheckerComponent;
   let fixture: ComponentFixture<AutonomiousScopeCheckerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AutonomiousScopeCheckerComponent ]
     })

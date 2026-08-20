@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   FormGroup,
   FormControl,
   Validators,
-  FormBuilder,
-  FormArray,
+  UntypedFormBuilder,
+  UntypedFormArray,
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-profile-editor',
-  templateUrl: './profile-editor.component.html',
-  styleUrls: ['./profile-editor.component.scss'],
+    selector: 'app-profile-editor',
+    templateUrl: './profile-editor.component.html',
+    styleUrls: ['./profile-editor.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ProfileEditorComponent {
   profileForm = this.fb.group({
@@ -25,10 +27,10 @@ export class ProfileEditorComponent {
     aliases: this.fb.array([this.fb.control('')]),
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: UntypedFormBuilder) {}
 
   get aliases() {
-    return this.profileForm.get('aliases') as FormArray;
+    return this.profileForm.get('aliases') as UntypedFormArray;
   }
 
   public addAlias() {

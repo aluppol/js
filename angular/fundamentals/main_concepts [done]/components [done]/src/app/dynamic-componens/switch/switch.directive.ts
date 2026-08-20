@@ -1,7 +1,8 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appSwitchDirective]'
+    selector: '[appSwitchDirective]',
+    standalone: false
 })
 export class SwitchDirective {
 

@@ -11,5 +11,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "util": "^0.12.2"
+  },
+  "overrides": {
+    "immutable": "^5.1.9"
   }
 }

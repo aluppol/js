@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-show-params',
-  templateUrl: './show-params.component.html',
-  styleUrls: ['./show-params.component.scss']
+    selector: 'app-show-params',
+    templateUrl: './show-params.component.html',
+    styleUrls: ['./show-params.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ShowParamsComponent implements OnInit {
 

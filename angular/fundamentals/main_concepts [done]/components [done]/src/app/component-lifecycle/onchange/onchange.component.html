@@ -1,4 +1,6 @@
 <button (click)="clearLog()">Clear Log</button>
 <ul>
-  <li *ngFor="let logMsg of log">{{ logMsg }}</li>
+  @for (logMsg of log; track logMsg) {
+    <li>{{ logMsg }}</li>
+  }
 </ul>

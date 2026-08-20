@@ -3,14 +3,15 @@ import { AbstractControl, Validator, NG_VALIDATORS } from '@angular/forms';
 import { forbiddenNameValidator } from '../reactive-forms-validation/forbidden-name.directive';
 
 @Directive({
-  selector: '[appForbiddenName]',
-  providers: [
-    {
-      provide: NG_VALIDATORS,
-      useExisting: ForbiddenNameValidatorDirective,
-      multi: true,
-    },
-  ],
+    selector: '[appForbiddenName]',
+    providers: [
+        {
+            provide: NG_VALIDATORS,
+            useExisting: ForbiddenNameValidatorDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class ForbiddenNameValidatorDirective implements Validator {
   @Input('appForbiddenName') forbiddenName: string;

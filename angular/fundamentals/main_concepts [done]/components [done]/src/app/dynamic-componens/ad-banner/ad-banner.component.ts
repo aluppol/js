@@ -1,17 +1,19 @@
-import { Component, OnDestroy, OnInit, Input, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { AdDirective } from '../ad.directive';
 
 import { AdComponent } from '../ad.component';
 import { AdItem } from '../ad-item';
 
 @Component({
-  selector: 'app-ad-banner',
-  template: `
+    selector: 'app-ad-banner',
+    template: `
     <div class="ad-banner-example">
               <h3>Advertisements</h3>
               <ng-template adHost></ng-template>
             </div>
-  `
+  `,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AdBannerComponent implements OnInit, OnDestroy {
 
@@ -20,7 +22,7 @@ export class AdBannerComponent implements OnInit, OnDestroy {
   @ViewChild(AdDirective, { static: true }) adHost: AdDirective;
   interval: any;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.loadComponent();
@@ -33,16 +35,12 @@ export class AdBannerComponent implements OnInit, OnDestroy {
 
     // console.log(adItem);
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
-
-    // console.log(componentFactory);
-
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
 
-    // console.log(viewContainerRef);
-
-    const componentRef = viewContainerRef.createComponent<AdComponent>(componentFactory);
+    // Angular 17 removed ComponentFactoryResolver; createComponent takes the
+    // component type directly.
+    const componentRef = viewContainerRef.createComponent<AdComponent>(adItem.component);
     componentRef.instance.data = adItem.data;
     // console.log(componentRef);
   }

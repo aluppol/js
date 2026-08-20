@@ -8,12 +8,15 @@ import {
   AfterViewInit,
   AfterViewChecked,
   OnDestroy,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 @Component({
-  selector: 'app-component-lifecycle',
-  templateUrl: './component-lifecycle.component.html',
-  styleUrls: ['./component-lifecycle.component.scss'],
+    selector: 'app-component-lifecycle',
+    templateUrl: './component-lifecycle.component.html',
+    styleUrls: ['./component-lifecycle.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ComponentLifecycleComponent
   implements

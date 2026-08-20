@@ -1,11 +1,13 @@
-import { Component, Host, OnInit, Optional } from '@angular/core';
+import { Component, Host, OnInit, Optional, ChangeDetectionStrategy } from '@angular/core';
 
 import { OptionalService } from './services/optional.service';
 
 @Component({
-  selector: 'app-hierarсhial-injections',
-  templateUrl: './hierarchial-injections.component.html',
-  styleUrls: ['./hierarchial-injections.component.scss'],
+    selector: 'app-hierarсhial-injections',
+    templateUrl: './hierarchial-injections.component.html',
+    styleUrls: ['./hierarchial-injections.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HierarchialInjectionsComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import {Component, forwardRef} from '@angular/core';
+import {Component, forwardRef, ChangeDetectionStrategy} from '@angular/core';
 
 export abstract class Base{
   name: string;
@@ -14,10 +14,12 @@ export function parentProvider(component: any){
 }
 
 @Component({
-  selector: 'alex',
-  templateUrl: './alex.component.html',
-  styleUrls: ['./alex.component.scss'],
-  providers: [parentProvider(AlexComponent)]
+    selector: 'alex',
+    templateUrl: './alex.component.html',
+    styleUrls: ['./alex.component.scss'],
+    providers: [parentProvider(AlexComponent)],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AlexComponent implements Base{
 

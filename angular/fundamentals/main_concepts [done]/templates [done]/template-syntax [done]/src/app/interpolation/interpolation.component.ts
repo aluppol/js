@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-interpolation',
-  templateUrl: './interpolation.component.html',
-  styleUrls: ['./interpolation.component.scss'],
+    selector: 'app-interpolation',
+    templateUrl: './interpolation.component.html',
+    styleUrls: ['./interpolation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InterpolationComponent implements OnInit {
   title = 'Just Ex. title';

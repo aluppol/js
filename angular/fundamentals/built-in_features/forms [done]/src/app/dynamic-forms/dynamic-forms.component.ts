@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { UntypedFormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { QuestionBase } from './question-base';
@@ -7,15 +7,17 @@ import { QuestionControlService } from './question-control.service';
 import { QuestionService } from './question.service';
 
 @Component({
-  selector: 'app-dynamic-forms',
-  templateUrl: './dynamic-forms.component.html',
-  styleUrls: ['./dynamic-forms.component.scss'],
-  providers: [QuestionControlService, QuestionService],
+    selector: 'app-dynamic-forms',
+    templateUrl: './dynamic-forms.component.html',
+    styleUrls: ['./dynamic-forms.component.scss'],
+    providers: [QuestionControlService, QuestionService],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class DynamicFormsComponent implements OnInit, OnDestroy {
   questions: QuestionBase<string>[] = [];
   questionsSubscription: Subscription;
-  form: FormGroup;
+  form: UntypedFormGroup;
   payLoad = '';
 
   constructor(

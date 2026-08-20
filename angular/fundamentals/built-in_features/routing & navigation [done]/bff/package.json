@@ -6,6 +6,9 @@
   },
   "private": true,
   "dependencies": {
-    "express": "4.16.3"
+    "express": "^5.2.1"
+  },
+  "overrides": {
+    "immutable": "^5.1.9"
   }
 }

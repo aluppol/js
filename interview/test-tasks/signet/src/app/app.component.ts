@@ -7,11 +7,13 @@ import {HttpParams} from "@angular/common/http";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone: false,
 })
 export class AppComponent implements OnInit{
   year = new FormControl('', yearValidator());
-  genre = new FormControl('');
+  // <mat-select multiple> holds an array; Angular 14 made form controls typed.
+  genre = new FormControl<string[]>([]);
 
   genres = [];
   movies = [];

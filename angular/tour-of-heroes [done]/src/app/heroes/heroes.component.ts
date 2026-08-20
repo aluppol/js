@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Hero } from '../models/hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss'],
+    selector: 'app-heroes',
+    templateUrl: './heroes.component.html',
+    styleUrls: ['./heroes.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];

@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AnimalService } from 'src/app/hierarchial-injections/services/animal.service';
 import { FlowerService } from 'src/app/hierarchial-injections/services/flower.service';
 
 @Component({
-  selector: 'app-inspector',
-  templateUrl: './inspector.component.html',
-  styleUrls: ['./inspector.component.scss']
+    selector: 'app-inspector',
+    templateUrl: './inspector.component.html',
+    styleUrls: ['./inspector.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InspectorComponent implements OnInit {
 

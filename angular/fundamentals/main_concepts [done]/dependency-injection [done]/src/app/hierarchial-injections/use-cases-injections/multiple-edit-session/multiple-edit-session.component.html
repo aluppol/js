@@ -1,7 +1,11 @@
 <h3>Crisis Tax Return</h3>
 <ul>
-    <li *ngFor="let hero of heroes | async" (click)="showTaxReturn(hero)">{{hero.name}}</li>
+  @for (hero of heroes | async; track hero) {
+    <li (click)="showTaxReturn(hero)">{{hero.name}}</li>
+  }
 </ul>
 
-<app-hero-tax-return *ngFor="let selected of selectedTaxReturn; let i = index" [taxReturn]='selected'
-    (close)="closeTaxReturn(i)"></app-hero-tax-return>
+@for (selected of selectedTaxReturn; track selected; let i = $index) {
+  <app-hero-tax-return [taxReturn]='selected'
+  (close)="closeTaxReturn(i)"></app-hero-tax-return>
+}

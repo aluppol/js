@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-host-context-pseudo',
-  templateUrl: './host-context-pseudo.component.html',
-  styleUrls: ['./host-context-pseudo.component.scss']
+    selector: 'app-host-context-pseudo',
+    templateUrl: './host-context-pseudo.component.html',
+    styleUrls: ['./host-context-pseudo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HostContextPseudoComponent implements OnInit {
 

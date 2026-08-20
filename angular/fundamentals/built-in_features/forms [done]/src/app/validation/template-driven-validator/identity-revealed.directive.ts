@@ -8,14 +8,15 @@ import {
 } from '@angular/forms';
 
 @Directive({
-  selector: '[appIdentityRevealed]',
-  providers: [
-    {
-      provide: NG_VALIDATORS,
-      useExisting: IdentityRevealedValidatorDirective,
-      multi: true,
-    },
-  ],
+    selector: '[appIdentityRevealed]',
+    providers: [
+        {
+            provide: NG_VALIDATORS,
+            useExisting: IdentityRevealedValidatorDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class IdentityRevealedValidatorDirective implements Validator {
   validate(control: AbstractControl): ValidationErrors {

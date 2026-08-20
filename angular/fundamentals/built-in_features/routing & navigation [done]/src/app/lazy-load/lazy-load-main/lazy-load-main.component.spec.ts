@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LazyLoadMainComponent } from './lazy-load-main.component';
 
@@ -6,7 +6,7 @@ describe('LazyLoadMainComponent', () => {
   let component: LazyLoadMainComponent;
   let fixture: ComponentFixture<LazyLoadMainComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LazyLoadMainComponent ]
     })

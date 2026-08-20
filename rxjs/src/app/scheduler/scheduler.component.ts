@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { asyncScheduler, Observable, of } from 'rxjs';
 import { observeOn } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-scheduler',
-  templateUrl: './scheduler.component.html',
-  styleUrls: ['./scheduler.component.scss']
+    selector: 'app-scheduler',
+    templateUrl: './scheduler.component.html',
+    styleUrls: ['./scheduler.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SchedulerComponent implements OnInit {
 

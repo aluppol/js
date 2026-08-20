@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ChildInteractionOnchangeComponent } from './child-interaction-onchange.component';
 
@@ -6,7 +6,7 @@ describe('ChildInteractionOnchangeComponent', () => {
   let component: ChildInteractionOnchangeComponent;
   let fixture: ComponentFixture<ChildInteractionOnchangeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ChildInteractionOnchangeComponent ]
     })

@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-in-out-props',
-  templateUrl: './in-out-props.component.html',
-  styleUrls: ['./in-out-props.component.scss'],
+    selector: 'app-in-out-props',
+    templateUrl: './in-out-props.component.html',
+    styleUrls: ['./in-out-props.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InOutPropsComponent implements OnInit {
   currentItem = 'Job';

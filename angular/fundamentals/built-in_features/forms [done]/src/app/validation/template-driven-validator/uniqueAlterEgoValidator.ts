@@ -24,14 +24,15 @@ export class UniqueAlterEgoValidator implements AsyncValidator {
 }
 
 @Directive({
-  selector: '[appUniqueAlterEgo]',
-  providers: [
-    {
-      provide: NG_ASYNC_VALIDATORS,
-      useExisting: forwardRef(() => UniqueAlterEgoValidator),
-      multi: true,
-    },
-  ],
+    selector: '[appUniqueAlterEgo]',
+    providers: [
+        {
+            provide: NG_ASYNC_VALIDATORS,
+            useExisting: forwardRef(() => UniqueAlterEgoValidator),
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class UniqueAlterEgoValidatorDirective {
   constructor(private validator: UniqueAlterEgoValidator) {}

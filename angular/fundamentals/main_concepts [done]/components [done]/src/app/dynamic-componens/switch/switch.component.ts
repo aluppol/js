@@ -1,13 +1,15 @@
-import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { SwitchComponentItem } from './switch-component-item';
 import { SwitchDirective } from './switch.directive';
 import { SwitchComponentInterface } from './switch-component.interface';
 
 @Component({
-  selector: 'app-switch',
-  templateUrl: './switch.component.html',
-  styleUrls: ['./switch.component.scss']
+    selector: 'app-switch',
+    templateUrl: './switch.component.html',
+    styleUrls: ['./switch.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SwitchComponent implements OnInit {
 
@@ -17,7 +19,7 @@ export class SwitchComponent implements OnInit {
 
   componentIndex = 1;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -28,10 +30,9 @@ export class SwitchComponent implements OnInit {
     this.componentIndex = this.componentIndex === 0 ? 1 : 0;
 
     const currentItem = this.componentItems[this.componentIndex];
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(currentItem.component);
 
     this.container.viewContainerRef.clear();
-    const componentRef = this.container.viewContainerRef.createComponent<SwitchComponentInterface>(componentFactory);
+    const componentRef = this.container.viewContainerRef.createComponent<SwitchComponentInterface>(currentItem.component);
     componentRef.instance.data = currentItem.data;
 
   }

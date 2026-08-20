@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CompileTokenMetadata } from '@angular/compiler';
 
 @Component({
-  selector: 'app-template-statements',
-  templateUrl: './template-statements.component.html',
-  styleUrls: ['./template-statements.component.scss'],
+    selector: 'app-template-statements',
+    templateUrl: './template-statements.component.html',
+    styleUrls: ['./template-statements.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class TemplateStatementsComponent implements OnInit {
   heros = [

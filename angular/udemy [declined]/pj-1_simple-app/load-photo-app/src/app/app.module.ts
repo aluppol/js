@@ -1,16 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UploadFilesComponentComponent } from './upload-files-component/upload-files-component.component';
 import { TestAutostringifyComponent } from './test-autostringify/test-autostringify.component';
 
-@NgModule({
-  declarations: [AppComponent, UploadFilesComponentComponent, TestAutostringifyComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent, UploadFilesComponentComponent, TestAutostringifyComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule, AppRoutingModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule {}

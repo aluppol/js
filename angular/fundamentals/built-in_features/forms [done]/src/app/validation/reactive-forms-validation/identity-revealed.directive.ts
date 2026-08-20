@@ -1,7 +1,7 @@
-import { ValidatorFn, FormGroup, ValidationErrors } from '@angular/forms';
+import { ValidatorFn, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 
 export const identityRevealedValidator: ValidatorFn = (
-  control: FormGroup
+  control: UntypedFormGroup
 ): ValidationErrors | null => {
   // console.log(control);
   const name = control.get('name');

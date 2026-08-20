@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'hoverEffect'
+    name: 'hoverEffect',
+    standalone: false
 })
 export class HoverEffectPipe implements PipeTransform {
 

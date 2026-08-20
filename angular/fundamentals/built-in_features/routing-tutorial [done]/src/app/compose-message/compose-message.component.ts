@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-compose-message',
-  templateUrl: './compose-message.component.html',
-  styleUrls: ['./compose-message.component.scss']
+    selector: 'app-compose-message',
+    templateUrl: './compose-message.component.html',
+    styleUrls: ['./compose-message.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ComposeMessageComponent {
 

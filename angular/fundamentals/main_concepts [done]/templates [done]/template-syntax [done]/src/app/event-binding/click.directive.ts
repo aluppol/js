@@ -1,7 +1,8 @@
 import { Directive, ElementRef, EventEmitter, Output } from '@angular/core';
 
 @Directive({
-  selector: '[myClick]',
+    selector: '[myClick]',
+    standalone: false
 })
 export class ClickDirective {
   @Output('myClick') clicks = new EventEmitter<string>();

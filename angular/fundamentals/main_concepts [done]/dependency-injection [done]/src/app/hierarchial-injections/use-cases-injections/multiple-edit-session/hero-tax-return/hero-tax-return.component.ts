@@ -1,12 +1,14 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { HeroTaxReturn } from '../hero';
 import { HeroTaxReturnService } from '../services/hero-tax-return.service';
 
 @Component({
-  selector: 'app-hero-tax-return',
-  templateUrl: './hero-tax-return.component.html',
-  styleUrls: ['./hero-tax-return.component.scss'],
-  providers: [HeroTaxReturnService]
+    selector: 'app-hero-tax-return',
+    templateUrl: './hero-tax-return.component.html',
+    styleUrls: ['./hero-tax-return.component.scss'],
+    providers: [HeroTaxReturnService],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HeroTaxReturnComponent {
 

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AutonomiousChildComponent } from './autonomious-child.component';
 
@@ -6,7 +6,7 @@ describe('AutonomiousChildComponent', () => {
   let component: AutonomiousChildComponent;
   let fixture: ComponentFixture<AutonomiousChildComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AutonomiousChildComponent ]
     })

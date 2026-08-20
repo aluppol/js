@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TestAutostringifyComponent } from './test-autostringify.component';
 
@@ -6,7 +6,7 @@ describe('TestAutostringifyComponent', () => {
   let component: TestAutostringifyComponent;
   let fixture: ComponentFixture<TestAutostringifyComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TestAutostringifyComponent ]
     })

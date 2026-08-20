@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { HeroItem } from 'src/interfaces/heroItem';
 
 @Component({
-  selector: 'app-event-binding',
-  templateUrl: './event-binding.component.html',
-  styleUrls: ['./event-binding.component.scss'],
+    selector: 'app-event-binding',
+    templateUrl: './event-binding.component.html',
+    styleUrls: ['./event-binding.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class EventBindingComponent implements OnInit {
   public clickTarget;

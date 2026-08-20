@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-err404',
-  templateUrl: './err404.component.html',
-  styleUrls: ['./err404.component.scss']
+    selector: 'app-err404',
+    templateUrl: './err404.component.html',
+    styleUrls: ['./err404.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class Err404 implements OnInit {
 

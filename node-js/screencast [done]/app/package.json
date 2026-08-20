@@ -6,30 +6,33 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "async": "^3.2.0",
-    "config": "^3.3.1",
+    "async": "^3.2.6",
+    "config": "^5.0.1",
     "connect": "^3.7.0",
-    "cookie": "^0.4.1",
-    "cookie-parser": "^1.4.5",
-    "cookie-signature": "^1.1.0",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
+    "cookie": "^2.0.1",
+    "cookie-parser": "^1.4.7",
+    "cookie-signature": "^1.2.2",
+    "debug": "^4.4.3",
+    "ejs": "^3.1.10",
     "ejs-locals": "^1.0.2",
-    "errorhandler": "^1.5.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "mongodb": "^3.5.7",
-    "mongoose": "^5.9.12",
-    "morgan": "~1.9.1",
-    "nconf": "^0.10.0",
-    "serve-favicon": "^2.5.0",
-    "socket.io": "^2.3.0",
-    "winston": "^3.2.1"
+    "errorhandler": "^1.5.2",
+    "express": "^5.2.1",
+    "http-errors": "^2.0.1",
+    "mongodb": "^7.5.0",
+    "mongoose": "^9.9.3",
+    "morgan": "^1.11.0",
+    "nconf": "^0.13.0",
+    "serve-favicon": "^2.5.1",
+    "socket.io": "^4.8.3",
+    "winston": "^3.19.0"
   },
   "devDependencies": {
-    "body-parser": "^1.19.0",
-    "connect-mongo": "^3.2.0",
-    "express-session": "^1.17.1",
-    "express-sessions": "^1.0.6"
+    "body-parser": "^2.3.0",
+    "connect-mongo": "^6.0.0",
+    "express-session": "^1.19.0"
+  },
+  "overrides": {
+    "immutable": "^5.1.9",
+    "ejs": "^3.1.10"
   }
 }

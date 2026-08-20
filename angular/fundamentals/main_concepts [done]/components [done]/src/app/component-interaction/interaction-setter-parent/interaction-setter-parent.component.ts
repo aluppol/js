@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-interaction-setter-parent',
-  templateUrl: './interaction-setter-parent.component.html',
-  styleUrls: ['./interaction-setter-parent.component.scss'],
+    selector: 'app-interaction-setter-parent',
+    templateUrl: './interaction-setter-parent.component.html',
+    styleUrls: ['./interaction-setter-parent.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InteractionSetterParentComponent implements OnInit {
   // Displays 'Dr IQ', '<no name set>', 'Bombasto'

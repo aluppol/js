@@ -22,38 +22,57 @@
 <button (click)="readMe()">Click Me</button>
 <div>__________________*ngIf______________________________</div>
 
-<div *ngIf="showMsg" [ngStyle]="{ color: colorName }">
-  Show this message from IF true statement.
-</div>
+@if (showMsg) {
+  <div [ngStyle]="{ color: colorName }">
+    Show this message from IF true statement.
+  </div>
+}
 
-<div *ngIf="showMsg; else showElseMsg" [ngStyle]="{ color: colorName }">
-  IF true
-</div>
-<ng-template #showElseMsg>
+@if (showMsg) {
+  <div [ngStyle]="{ color: colorName }">
+    IF true
+  </div>
+} @else {
   <div [ngStyle]="{ color: colorName }">ELSE</div>
-</ng-template>
+}
 
-<div *ngIf="showMsg; then showThenMsg; else showElseMsgThen">
-  IF true furthermore
-</div>
-<ng-template #showThenMsg>Then Message</ng-template>
-<ng-template #showElseMsgThen>Else Message</ng-template>
+@if (showMsg) {
+  Then Message
+} @else {
+  Else Message
+}
 <br />
 
 <div>__________________*ngSwitch______________________________</div>
-<div [ngSwitch]="switchValue">
-  <div *ngSwitchCase="1">Value 1</div>
-  <div *ngSwitchCase="2">Value 2</div>
-  <div *ngSwitchCase="'three'">Value 3</div>
-  <div *ngSwitchCase="4">Value 4</div>
-  <div *ngSwitchCase="5">Value 5</div>
-  <div *ngSwitchDefault>Default</div>
+<div>
+  @switch (switchValue) {
+    @case (1) {
+      <div>Value 1</div>
+    }
+    @case (2) {
+      <div>Value 2</div>
+    }
+    @case ('three') {
+      <div>Value 3</div>
+    }
+    @case (4) {
+      <div>Value 4</div>
+    }
+    @case (5) {
+      <div>Value 5</div>
+    }
+    @default {
+      <div>Default</div>
+    }
+  }
 </div>
 <br />
 
 <div>________________________*ngFor_______________________________</div>
 <ul>
-  <li *ngFor="let user of users">{{ user.name }}</li>
+  @for (user of users; track user) {
+    <li>{{ user.name }}</li>
+  }
 </ul>
 <table>
   <tr>
@@ -65,26 +84,22 @@
     <th>Odd</th>
     <th>Even</th>
   </tr>
-  <tr
-    *ngFor="
-      let user of users;
-      index as i;
-      first as f;
-      last as l;
-      even as e;
-      odd as o
-    "
-  >
-    <td>{{ user.id }}</td>
-    <td>{{ user.name }}</td>
-    <td>{{ i }}</td>
-    <td [ngStyle]="{ color: colorValue, background: '#ffeeff' }">{{ f }}</td>
-    <td>{{ l }}</td>
-    <td [ngClass]="[clsName, clsNameLast]">{{ o }}</td>
-    <td [ngClass]="{ doom: implementClasses, peace: !implementClasses }">
-      {{ e }}
-    </td>
-  </tr>
+  @for (
+    user of users; track
+    user; let i = $index; let f = $first; let l = $last; let e = $even; let o = $odd) {
+    <tr
+      >
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ i }}</td>
+      <td [ngStyle]="{ color: colorValue, background: '#ffeeff' }">{{ f }}</td>
+      <td>{{ l }}</td>
+      <td [ngClass]="[clsName, clsNameLast]">{{ o }}</td>
+      <td [ngClass]="{ doom: implementClasses, peace: !implementClasses }">
+        {{ e }}
+      </td>
+    </tr>
+  }
 </table>
 <br />
 

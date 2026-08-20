@@ -32,7 +32,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     enableTracing: false,
     preloadingStrategy: SelectivePreloadStrategyService
-  })],
+})],
   providers: [
     SelectivePreloadStrategyService
   ],

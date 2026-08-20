@@ -1,12 +1,14 @@
-import { Component, Host, OnInit, Optional, SkipSelf } from '@angular/core';
+import { Component, Host, OnInit, Optional, SkipSelf, ChangeDetectionStrategy } from '@angular/core';
 import { AnimalService } from '../../services/animal.service';
 import { FlowerService } from '../../services/flower.service';
 
 @Component({
-  selector: 'app-child',
-  templateUrl: './child.component.html',
-  styleUrls: ['./child.component.scss'],
-  providers: [{ provide: FlowerService, useValue: { emoji: '🌻' } }], viewProviders: [{ provide: AnimalService, useValue: { emoji: '🐶' } }]
+    selector: 'app-child',
+    templateUrl: './child.component.html',
+    styleUrls: ['./child.component.scss'],
+    providers: [{ provide: FlowerService, useValue: { emoji: '🌻' } }], viewProviders: [{ provide: AnimalService, useValue: { emoji: '🐶' } }],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ChildComponent implements OnInit {
 

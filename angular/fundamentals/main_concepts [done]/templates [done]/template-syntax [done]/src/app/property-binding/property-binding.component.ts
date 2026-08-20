@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-property-binding',
-  templateUrl: './property-binding.component.html',
-  styleUrls: ['./property-binding.component.scss'],
+    selector: 'app-property-binding',
+    templateUrl: './property-binding.component.html',
+    styleUrls: ['./property-binding.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class PropertyBindingComponent implements OnInit {
   public imageUrlBinding: string =

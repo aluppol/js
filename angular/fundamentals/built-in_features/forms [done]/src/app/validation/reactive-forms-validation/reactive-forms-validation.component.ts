@@ -1,36 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { forbiddenNameValidator } from './forbidden-name.directive';
 import { identityRevealedValidator } from './identity-revealed.directive';
 import { UniqueAlterEgoValidator } from '../template-driven-validator/uniqueAlterEgoValidator';
 
 @Component({
-  selector: 'app-reactive-forms-validation',
-  templateUrl: './reactive-forms-validation.component.html',
-  styleUrls: ['./reactive-forms-validation.component.scss'],
+    selector: 'app-reactive-forms-validation',
+    templateUrl: './reactive-forms-validation.component.html',
+    styleUrls: ['./reactive-forms-validation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ReactiveFormsValidationComponent implements OnInit {
-  heroForm: FormGroup;
+  heroForm: UntypedFormGroup;
 
   constructor(private uniqueAlterEgoValidator: UniqueAlterEgoValidator) {}
 
   ngOnInit(): void {
-    this.heroForm = new FormGroup(
+    this.heroForm = new UntypedFormGroup(
       {
-        name: new FormControl('', {
+        name: new UntypedFormControl('', {
           validators: [
             Validators.required,
             Validators.minLength(4),
             forbiddenNameValidator(/bobby/i),
           ],
         }),
-        alterEgo: new FormControl('', {
+        alterEgo: new UntypedFormControl('', {
           updateOn: 'blur',
           asyncValidators: this.uniqueAlterEgoValidator.validate.bind(
             this.uniqueAlterEgoValidator
           ),
         }),
-        power: new FormControl(),
+        power: new UntypedFormControl(),
       },
       { validators: identityRevealedValidator }
     );

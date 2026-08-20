@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UploadFileService } from './upload-file.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-upload-files-component',
-  templateUrl: './upload-files-component.component.html',
-  styleUrls: ['./upload-files-component.component.scss'],
+    selector: 'app-upload-files-component',
+    templateUrl: './upload-files-component.component.html',
+    styleUrls: ['./upload-files-component.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class UploadFilesComponentComponent implements OnInit {
   selectedFiles: FileList;

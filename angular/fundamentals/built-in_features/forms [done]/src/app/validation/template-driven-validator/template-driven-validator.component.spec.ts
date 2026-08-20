@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TemplateDrivenValidatorComponent } from './template-driven-validator.component';
 
@@ -6,7 +6,7 @@ describe('TemplateDrivenValidatorComponent', () => {
   let component: TemplateDrivenValidatorComponent;
   let fixture: ComponentFixture<TemplateDrivenValidatorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TemplateDrivenValidatorComponent ]
     })

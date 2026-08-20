@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HeroService } from './services/hero.service';
 import { Hero, HeroTaxReturn } from './hero';
 
 @Component({
-  selector: 'app-multiple-edit-session',
-  templateUrl: './multiple-edit-session.component.html',
-  styleUrls: ['./multiple-edit-session.component.scss'],
-  providers: [HeroService]
+    selector: 'app-multiple-edit-session',
+    templateUrl: './multiple-edit-session.component.html',
+    styleUrls: ['./multiple-edit-session.component.scss'],
+    providers: [HeroService],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class MultipleEditSessionComponent {
   public heroes: Observable<Hero[]>;

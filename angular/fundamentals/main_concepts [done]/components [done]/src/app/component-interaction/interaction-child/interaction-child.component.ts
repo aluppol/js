@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
-import { HasErrorState } from '@angular/material/core/common-behaviors/error-state';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-interaction-child',
-  templateUrl: './interaction-child.component.html',
-  styleUrls: ['./interaction-child.component.scss'],
+    selector: 'app-interaction-child',
+    templateUrl: './interaction-child.component.html',
+    styleUrls: ['./interaction-child.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InteractionChildComponent {
   @Input() hero: string;

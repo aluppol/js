@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-template-ref-vars',
-  templateUrl: './template-ref-vars.component.html',
-  styleUrls: ['./template-ref-vars.component.scss'],
+    selector: 'app-template-ref-vars',
+    templateUrl: './template-ref-vars.component.html',
+    styleUrls: ['./template-ref-vars.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class TemplateRefVarsComponent implements OnInit {
   submitMessage: string = 'Please enter name!';

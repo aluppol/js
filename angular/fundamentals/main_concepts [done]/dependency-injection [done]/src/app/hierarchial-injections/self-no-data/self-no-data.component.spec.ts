@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SelfNoDataComponent } from './self-no-data.component';
 
@@ -6,7 +6,7 @@ describe('SelfNoDataComponent', () => {
   let component: SelfNoDataComponent;
   let fixture: ComponentFixture<SelfNoDataComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SelfNoDataComponent ]
     })

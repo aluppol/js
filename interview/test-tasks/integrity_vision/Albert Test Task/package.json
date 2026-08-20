@@ -11,5 +11,8 @@
   "devDependencies": {
     "fs": "0.0.1-security"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "overrides": {
+    "immutable": "^5.1.9"
+  }
 }

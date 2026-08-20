@@ -1,4 +1,6 @@
 <h3>Version {{ major }}.{{ minor }}</h3>
 <ul>
-  <li *ngFor="let log of changeLog">{{ log }}</li>
+  @for (log of changeLog; track log) {
+    <li>{{ log }}</li>
+  }
 </ul>

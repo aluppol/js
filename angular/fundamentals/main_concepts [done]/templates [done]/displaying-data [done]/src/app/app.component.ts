@@ -1,17 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Hero } from './hero';
 
 @Component({
-  selector: 'app-root',
-  template: `
+    selector: 'app-root',
+    template: `
     <h1>{{ title }}</h1>
     <h2>My favorite hero is: {{ myHero.name }}</h2>
     <p>Heroes:</p>
     <ul>
-      <li *ngFor="let hero of heroes">{{ hero.name }}</li>
+      @for (hero of heroes; track hero) {
+        <li>{{ hero.name }}</li>
+      }
     </ul>
-    <p *ngIf="heroes.length > 3">There are many heroes!</p>
-  `,
+    @if (heroes.length > 3) {
+      <p>There are many heroes!</p>
+    }
+    `,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AppComponent {
   title: string;

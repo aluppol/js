@@ -1,11 +1,13 @@
-import { Component, OnInit, Host } from '@angular/core';
+import { Component, OnInit, Host, ChangeDetectionStrategy } from '@angular/core';
 import { FlowerService } from '../services/flower.service';
 
 @Component({
-  selector: 'app-parent-host',
-  templateUrl: './parent-host.component.html',
-  styleUrls: ['./parent-host.component.scss'],
-  providers: [{ provide: FlowerService, useValue: { emoji: 'Parent Host' } }]
+    selector: 'app-parent-host',
+    templateUrl: './parent-host.component.html',
+    styleUrls: ['./parent-host.component.scss'],
+    providers: [{ provide: FlowerService, useValue: { emoji: 'Parent Host' } }],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ParentHostComponent implements OnInit {
 

@@ -1,10 +1,12 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { InteractionCountdownTimerComponent } from '../interaction-via-local-variables/interaction-countdown-timer/interaction-countdown-timer.component';
 
 @Component({
-  selector: 'app-interaction-view-child',
-  templateUrl: './interaction-view-child.component.html',
-  styleUrls: ['./interaction-view-child.component.scss'],
+    selector: 'app-interaction-view-child',
+    templateUrl: './interaction-view-child.component.html',
+    styleUrls: ['./interaction-view-child.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class InteractionViewChildComponent implements AfterViewInit {
   @ViewChild(InteractionCountdownTimerComponent)

@@ -1,9 +1,11 @@
-import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  templateUrl: './onchange.component.html',
-  selector: 'on-change',
-  styleUrls: ['./onchange.component.scss'],
+    templateUrl: './onchange.component.html',
+    selector: 'on-change',
+    styleUrls: ['./onchange.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class OnChangesComp implements OnChanges {
   @Input() heroName: string;

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AliasedClassComponent } from './aliased-class.component';
 
@@ -6,7 +6,7 @@ describe('AliasedClassComponent', () => {
   let component: AliasedClassComponent;
   let fixture: ComponentFixture<AliasedClassComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AliasedClassComponent ]
     })

@@ -1,8 +1,9 @@
 <h3>Master controls {{ names.length }} names</h3>
-<app-interaction-setter-child
-  *ngFor="let name of names"
-  [name]="name"
-></app-interaction-setter-child>
+@for (name of names; track name) {
+  <app-interaction-setter-child
+    [name]="name"
+  ></app-interaction-setter-child>
+}
 <app-interaction-child-custom
   [name]="customName"
 ></app-interaction-child-custom>
@@ -10,4 +11,4 @@
   [value]="customName"
   #customNameInput
   (input)="updateCustomName(customNameInput.value)"
-/>
+  />

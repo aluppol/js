@@ -1,8 +1,10 @@
 <h1>Crisis Table:</h1>
 <ul>
-  <li *ngFor="let hero of heros">
-    {{ hero.name }} <button (click)="remove(hero)">Remove</button> {{ hero.id }}
-  </li>
+  @for (hero of heros; track hero) {
+    <li>
+      {{ hero.name }} <button (click)="remove(hero)">Remove</button> {{ hero.id }}
+    </li>
+  }
 </ul>
 
 <button (click)="onSave($event)">Save</button>

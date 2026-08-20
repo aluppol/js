@@ -6,7 +6,8 @@ export type Hide = true;
 export type State = Show | Hide;
 
 @Directive({
-  selector: '[appUnless]'
+    selector: '[appUnless]',
+    standalone: false
 })
 export class UnlessDirective {
 

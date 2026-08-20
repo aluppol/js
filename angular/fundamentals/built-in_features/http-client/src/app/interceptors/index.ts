@@ -1,4 +1,4 @@
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import {NoopInterceptor} from "./noop-interceptor";
 
 export const httpInterceptorProviders = [

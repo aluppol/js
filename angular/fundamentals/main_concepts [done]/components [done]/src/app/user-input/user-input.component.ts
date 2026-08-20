@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-user-input',
-  templateUrl: './user-input.component.html',
-  styleUrls: ['./user-input.component.scss'],
+    selector: 'app-user-input',
+    templateUrl: './user-input.component.html',
+    styleUrls: ['./user-input.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class UserInputComponent implements OnInit {
   keys = '';

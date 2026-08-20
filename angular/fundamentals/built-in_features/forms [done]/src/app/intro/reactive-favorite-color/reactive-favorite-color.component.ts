@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-reactive-favorite-color',
-  templateUrl: './reactive-favorite-color.component.html',
-  styleUrls: ['./reactive-favorite-color.component.scss'],
+    selector: 'app-reactive-favorite-color',
+    templateUrl: './reactive-favorite-color.component.html',
+    styleUrls: ['./reactive-favorite-color.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ReactiveFavoriteColorComponent {
-  public favoriteColorControl = new FormControl('');
+  public favoriteColorControl = new UntypedFormControl('');
 }

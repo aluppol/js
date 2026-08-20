@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LinksArrayComponent } from './links-array.component';
 
@@ -6,7 +6,7 @@ describe('LinksArrayComponent', () => {
   let component: LinksArrayComponent;
   let fixture: ComponentFixture<LinksArrayComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LinksArrayComponent ]
     })

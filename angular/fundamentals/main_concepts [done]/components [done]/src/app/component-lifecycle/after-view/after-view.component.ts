@@ -3,18 +3,23 @@ import {
   AfterViewChecked,
   AfterViewInit,
   ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { ChildViewComp } from './child-view/child-view.component';
 
 @Component({
-  selector: 'after-view',
-  template: ` <p>{{ comment }}</p>
+    selector: 'after-view',
+    template: ` <p>{{ comment }}</p>
     <div>-- child view begins --</div>
     <child-view></child-view>
     <div>-- child view ends --</div>
     <ul>
-      <li *ngFor="let msg of log; index as i">#{{ i }}: {{ msg }}</li>
+      @for (msg of log; track msg; let i = $index) {
+        <li>#{{ i }}: {{ msg }}</li>
+      }
     </ul>`,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AfterViewComponent implements AfterViewChecked, AfterViewInit {
   private prevHero = '';

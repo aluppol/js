@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Crisis } from '../crisis';
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {CrisisService} from "../crisis.service";
@@ -7,9 +7,11 @@ import {switchMap} from "rxjs/operators";
 import {DialogService} from "../dialog.service";
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './crisis-detail.component.html',
-  styleUrls: ['./crisis-detail.component.scss']
+    selector: 'app-hero-detail',
+    templateUrl: './crisis-detail.component.html',
+    styleUrls: ['./crisis-detail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class CrisisDetailComponent implements OnInit {
 

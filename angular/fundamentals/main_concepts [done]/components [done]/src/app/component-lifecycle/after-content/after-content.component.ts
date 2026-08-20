@@ -3,18 +3,23 @@ import {
   AfterContentChecked,
   AfterContentInit,
   ContentChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { AfterContentChild } from './after-content-child.component';
 
 @Component({
-  selector: 'after-content',
-  template: `<p>{{ comment }}</p>
+    selector: 'after-content',
+    template: `<p>{{ comment }}</p>
     <div>-- projected content begins --</div>
     <ng-content></ng-content>
     <div>-- projected content ends --</div>
     <ul>
-      <li *ngFor="let msg of log; index as i">#{{ i }}: {{ msg }}</li>
+      @for (msg of log; track msg; let i = $index) {
+        <li>#{{ i }}: {{ msg }}</li>
+      }
     </ul>`,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AfterContent implements AfterContentChecked, AfterContentInit {
   private prevHero = '';

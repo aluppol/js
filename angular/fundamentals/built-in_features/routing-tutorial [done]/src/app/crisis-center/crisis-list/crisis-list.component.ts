@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {Crisis} from "../crisis";
 import {CrisisService} from "../crisis.service";
 import {Observable} from "rxjs";
@@ -6,9 +6,11 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {switchMap} from "rxjs/operators";
 
 @Component({
-  selector: 'app-crisis-list',
-  templateUrl: './crisis-list.component.html',
-  styleUrls: ['./crisis-list.component.scss']
+    selector: 'app-crisis-list',
+    templateUrl: './crisis-list.component.html',
+    styleUrls: ['./crisis-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class CrisisListComponent implements OnInit {
 

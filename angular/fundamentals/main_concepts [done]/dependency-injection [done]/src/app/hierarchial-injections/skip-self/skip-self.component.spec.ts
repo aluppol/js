@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SkipSelfComponent } from './skip-self.component';
 
@@ -6,7 +6,7 @@ describe('SkipSelfComponent', () => {
   let component: SkipSelfComponent;
   let fixture: ComponentFixture<SkipSelfComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SkipSelfComponent ]
     })

@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-in-templates',
-  templateUrl: './svg-in-templates.component.svg',
-  styleUrls: ['./svg-in-templates.component.scss'],
+    selector: 'app-svg-in-templates',
+    templateUrl: './svg-in-templates.component.svg',
+    styleUrls: ['./svg-in-templates.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SvgInTemplatesComponent implements OnInit {
   fillColor = 'rgb(200, 105, 255)';

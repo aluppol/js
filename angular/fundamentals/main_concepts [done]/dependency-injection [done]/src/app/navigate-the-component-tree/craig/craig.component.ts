@@ -1,10 +1,12 @@
-import { Component, Optional} from '@angular/core';
+import { Component, Optional, ChangeDetectionStrategy } from '@angular/core';
 import {Base} from "../alex/alex.component";
 
 @Component({
-  selector: 'craig',
-  templateUrl: './craig.component.html',
-  styleUrls: ['./craig.component.scss']
+    selector: 'craig',
+    templateUrl: './craig.component.html',
+    styleUrls: ['./craig.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class CraigComponent{
 

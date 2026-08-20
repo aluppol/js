@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { from, of } from 'rxjs';
 
 @Component({
-  selector: 'app-observer',
-  templateUrl: './observer.component.html',
-  styleUrls: ['./observer.component.scss']
+    selector: 'app-observer',
+    templateUrl: './observer.component.html',
+    styleUrls: ['./observer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ObserverComponent implements OnInit {
 

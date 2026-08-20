@@ -1,9 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-sizer',
-  templateUrl: './sizer.component.html',
-  styleUrls: ['./sizer.component.scss'],
+    selector: 'app-sizer',
+    templateUrl: './sizer.component.html',
+    styleUrls: ['./sizer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SizerComponent implements OnInit {
   @Input() size: number | string;

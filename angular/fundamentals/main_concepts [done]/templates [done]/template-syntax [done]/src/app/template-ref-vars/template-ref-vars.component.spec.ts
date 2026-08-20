@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TemplateRefVarsComponent } from './template-ref-vars.component';
 
@@ -6,7 +6,7 @@ describe('TemplateRefVarsComponent', () => {
   let component: TemplateRefVarsComponent;
   let fixture: ComponentFixture<TemplateRefVarsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TemplateRefVarsComponent ]
     })

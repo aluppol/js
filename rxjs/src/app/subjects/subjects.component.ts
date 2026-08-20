@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AsyncSubject, BehaviorSubject, ConnectableObservable, from, interval, of, ReplaySubject, Subject } from 'rxjs';
 import { last, multicast, refCount } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-subjects',
-  templateUrl: './subjects.component.html',
-  styleUrls: ['./subjects.component.scss']
+    selector: 'app-subjects',
+    templateUrl: './subjects.component.html',
+    styleUrls: ['./subjects.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SubjectsComponent implements OnInit {
 

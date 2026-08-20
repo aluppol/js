@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-attr-cl-style-binding',
-  templateUrl: './attr-cl-style-binding.component.html',
-  styleUrls: ['./attr-cl-style-binding.component.scss'],
+    selector: 'app-attr-cl-style-binding',
+    templateUrl: './attr-cl-style-binding.component.html',
+    styleUrls: ['./attr-cl-style-binding.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AttrClStyleBindingComponent implements OnInit {
   public actionName = 'The lable attr for the button';

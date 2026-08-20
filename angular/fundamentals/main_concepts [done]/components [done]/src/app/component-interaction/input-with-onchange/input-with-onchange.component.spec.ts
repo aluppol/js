@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { InputWithOnchangeComponent } from './input-with-onchange.component';
 
@@ -6,7 +6,7 @@ describe('InputWithOnchangeComponent', () => {
   let component: InputWithOnchangeComponent;
   let fixture: ComponentFixture<InputWithOnchangeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ InputWithOnchangeComponent ]
     })

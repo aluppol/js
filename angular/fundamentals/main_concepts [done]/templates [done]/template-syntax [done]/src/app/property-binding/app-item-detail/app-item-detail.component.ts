@@ -1,11 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { PropertyBindingComponent } from '../property-binding.component';
 import { HeroItem } from '../../../interfaces/heroItem';
 
 @Component({
-  selector: 'app-item-detail',
-  templateUrl: './app-item-detail.component.html',
-  styleUrls: ['./app-item-detail.component.scss'],
+    selector: 'app-item-detail',
+    templateUrl: './app-item-detail.component.html',
+    styleUrls: ['./app-item-detail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AppItemDetailComponent implements OnInit {
   @Input() childItem: PropertyBindingComponent;

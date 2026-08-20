@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Logger } from '../services/logger.service';
 
 import { UserLogger } from '../services/user-logger.service'
 
 @Component({
-  selector: 'app-class-providers',
-  templateUrl: './class-providers.component.html',
-  styleUrls: ['./class-providers.component.scss'],
-  providers: [{ provide: Logger, useClass: UserLogger }]
+    selector: 'app-class-providers',
+    templateUrl: './class-providers.component.html',
+    styleUrls: ['./class-providers.component.scss'],
+    providers: [{ provide: Logger, useClass: UserLogger }],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ClassProvidersComponent implements OnInit {
 

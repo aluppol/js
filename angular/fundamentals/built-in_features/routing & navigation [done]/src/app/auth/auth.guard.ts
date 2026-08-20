@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree,
-  CanLoad,
-  Route,
-  UrlSegment, Router
-} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Route, UrlSegment, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import {MatDialog} from "@angular/material/dialog";
 import {PassModalComponent} from "./pass-modal/pass-modal.component";
@@ -17,7 +9,7 @@ import {map} from "rxjs/operators";
 @Injectable({
   providedIn: 'root', deps: [MatDialog, ValidateService]
 })
-export class AuthGuard implements CanActivate, CanLoad {
+export class AuthGuard  {
 
   constructor(
     private dialog: MatDialog,
