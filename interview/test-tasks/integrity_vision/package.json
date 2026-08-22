@@ -9,9 +9,7 @@
   },
   "author": "Albert Luppol",
   "license": "ISC",
-  "devDependencies": {
-    "fs": "0.0.1-security"
-  },
+  "devDependencies": {},
   "dependencies": {},
   "overrides": {
     "immutable": "^5.1.9"

@@ -12,9 +12,9 @@
   "license": "ISC",
   "devDependencies": {
     "path": "^0.12.7",
-    "webpack": "^5.101.0",
+    "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.6"
   },
   "overrides": {
     "immutable": "^5.1.9",

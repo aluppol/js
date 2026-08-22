@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "express": "^4.17.1"
+    "express": "^4.20.0"
   },
   "overrides": {
     "immutable": "^5.1.9"
